@@ -14,7 +14,8 @@ export type SceneMode =
   | "tracking"
   | "open-palm"
   | "pinch-focus"
-  | "victory-flare";
+  | "victory-flare"
+  | "closed-fist";
 
 export interface InferenceResultPayload {
   type: "INFERENCE_RESULT";

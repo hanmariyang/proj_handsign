@@ -42,7 +42,8 @@ async function loadMediaPipeModule() {
   if (!mediaPipeModulePromise) {
     const moduleUrl =
       "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.32/vision_bundle.mjs";
-    mediaPipeModulePromise = import(/* @vite-ignore */ moduleUrl) as Promise<
+    const dynamicImport = new Function("url", "return import(url)");
+    mediaPipeModulePromise = dynamicImport(moduleUrl) as Promise<
       MediaPipeVisionModule
     >;
   }

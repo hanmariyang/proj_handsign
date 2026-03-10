@@ -23,7 +23,7 @@ export class InferenceBridge {
   constructor(private readonly options: InferenceBridgeOptions) {
     this.worker = new Worker(
       new URL("../../workers/inference.worker.ts", import.meta.url),
-      { type: "module" },
+      { type: "classic" },
     );
 
     this.worker.onmessage = (event: MessageEvent<WorkerToMainMessage>) => {

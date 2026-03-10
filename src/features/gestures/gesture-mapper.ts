@@ -44,6 +44,10 @@ function deriveSceneMode(
   pinch: number,
   pinchEngagedThreshold: number,
 ): SceneMode {
+  if (gestureLabel === "Closed_Fist") {
+    return "closed-fist";
+  }
+
   if (gestureLabel === "Victory") {
     return "victory-flare";
   }
@@ -124,16 +128,16 @@ export function smoothInteractionState(
     }
 
     return {
-      x: lerp(previousPoint.x, nextPoint.x, 0.28),
-      y: lerp(previousPoint.y, nextPoint.y, 0.28),
-      z: lerp(previousPoint.z, nextPoint.z, 0.28),
+      x: lerp(previousPoint.x, nextPoint.x, 0.16),
+      y: lerp(previousPoint.y, nextPoint.y, 0.16),
+      z: lerp(previousPoint.z, nextPoint.z, 0.16),
     };
   };
 
   return {
     ...next,
-    pinch: lerp(previous.pinch, next.pinch, 0.32),
-    presence: lerp(previous.presence, next.presence, 0.3),
+    pinch: lerp(previous.pinch, next.pinch, 0.18),
+    presence: lerp(previous.presence, next.presence, 0.14),
     palmCenter: smoothPoint(previous.palmCenter, next.palmCenter),
     pointer: smoothPoint(previous.pointer, next.pointer),
   };
