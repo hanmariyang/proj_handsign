@@ -8,9 +8,18 @@
     "build": "tsc -b && vite build",
     "preview": "vite preview"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "interactive-art",
+    "hand-tracking",
+    "gesture-recognition",
+    "mediapipe",
+    "three.js",
+    "tone.js",
+    "webcam",
+    "creative-coding"
+  ],
+  "author": "hanmariyang",
+  "license": "MIT",
   "type": "module",
   "dependencies": {
     "react": "^19.2.4",
